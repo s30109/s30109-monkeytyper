@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MonkeyType – Mini Klon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="container">
+    <h1>MonkeyType – Mini Klon</h1>
+    <div id="setup">
+        <label for="username" style="display:none;">Nazwa użytkownika:</label>
+        <input type="text" id="username" placeholder="Wpisz username">
+        <div class="btn-group">
+            <button id="startBtn">Start</button>
+            <button id="showHighscoresBtn" type="button">Highscores</button>
+            <button id="showMyHighscoresBtn" type="button">My Highscores</button>
+        </div>
+    </div>
+
+    <div id="game" style="display:none;">
+        <div id="timer">30</div>
+        <div id="liveStats" style="margin-bottom: 12px;">
+            <span>WPM: <b id="liveWPM">0</b></span> |
+            <span>Accuracy: <b id="liveAcc">0</b>%</span>
+        </div>
+        <div id="words"></div>
+        <input id="inputArea" autocomplete="off" disabled placeholder="Wpisuj słowa, zatwierdzaj spacją...">
+    </div>
+
+    <div id="result" style="display:none;"></div>
+</div>
+
+<!-- Modal Highscores -->
+<div id="modal" class="modal" onclick="closeModal(event)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close" onclick="closeModal(event)">&times;</span>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
